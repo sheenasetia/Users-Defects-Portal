@@ -1,0 +1,13 @@
+package com.sheena.defectapiproject.repository;
+
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sheena.defectapiproject.models.Defect;
+
+public interface DefectRepository extends JpaRepository<Defect, Integer>{
+
+	Defect findByUsername(String username);
+
+}
+

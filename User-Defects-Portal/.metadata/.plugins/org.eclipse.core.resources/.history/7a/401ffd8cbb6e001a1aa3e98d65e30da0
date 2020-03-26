@@ -1,0 +1,12 @@
+package com.sheena.defectapiproject.feignclient;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(value = "defect-service" url= "http://localhost:8083/defect/")
+public interface DefectServiceClient {
+
+	@GetMapping("/{username}")
+	public void getDefectsByUser(@PathVariable String username);
+	
+}

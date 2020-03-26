@@ -1,0 +1,37 @@
+package com.sheena.defectapiproject.resource;
+
+import com.sheena.defectapiproject.models.*;
+import com.sheena.defectapiproject.repository.UsersRepository;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/users")
+public class UsersResource {
+
+	@Autowired
+	UsersRepository usersRepository;
+	
+	@GetMapping(value = "/")
+	public List<Users> getAll()
+	{
+		return usersRepository.findAll();
+	}
+	
+	@PostMapping(value = "/register")
+	public Users addUser(@RequestBody final Users users){
+	return usersRepository.save(users);
+	}
+	
+	@PostMapping(value = "/login")
+	public Boolean authenticateUser(@RequestBody final Users user){
+	return (usersRepository.findByEmailAndPassword(user.getEmail(),user.getPassword())!=null);
+	}
+}

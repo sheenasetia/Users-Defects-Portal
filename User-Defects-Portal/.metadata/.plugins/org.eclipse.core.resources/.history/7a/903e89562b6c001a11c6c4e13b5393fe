@@ -1,0 +1,27 @@
+package com.sheena.defectapiproject.resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sheena.defectapiproject.repository.UsersRepository;
+
+@RestController
+@RequestMapping(value = "/users")
+public class UsersResource {
+
+	@Autowired
+	UsersRepository userRepository;
+	
+	@GetMapping(value = "/")
+	public List<Users> getAll() {
+		return usersRepository.findAll();
+	}
+	
+	@PostMapping(value = "/register")
+	public List<Users> persist(@RequestBody final Users users)
+	usersRepository.save(users);
+	return usersRepository.findAll();
+}

@@ -1,0 +1,32 @@
+package com.sheena.defectapiproject.models;
+
+import java.util.List;
+
+public class UserProfile {
+
+	private Users userInfo;
+	private List<Defect> def;
+	
+	public UserProfile() {
+		super();
+		
+	}
+	public UserProfile(Users userInfo, List<Defect> def) {
+		super();
+		this.userInfo = userInfo;
+		this.def = def;
+	}
+	public Users getUserInfo() {
+		return userInfo;
+	}
+	public void setUserInfo(Users userInfo) {
+		this.userInfo = userInfo;
+	}
+	public List<Defect> getDef() {
+		return def;
+	}
+	public void setDef(List<Defect> def) {
+		this.def = def;
+	}
+	
+}

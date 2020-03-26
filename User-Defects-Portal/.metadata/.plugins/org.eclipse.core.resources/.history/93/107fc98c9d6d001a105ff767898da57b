@@ -1,0 +1,5 @@
+package com.sheena.defectapiproject.repository;
+
+public class DefectRepository {
+
+}

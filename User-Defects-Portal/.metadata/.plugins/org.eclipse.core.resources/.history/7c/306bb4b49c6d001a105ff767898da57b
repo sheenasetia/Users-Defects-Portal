@@ -1,0 +1,21 @@
+package com.sheena.defectapiproject.models;
+
+import java.util.Date;
+import java.sql.*;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
+@Entity
+public class Defect {
+
+	@Id
+	@GeneratedValue
+	private String defectId;
+	/*public String getDefectId() {
+		return defectId;
+	}
+	public void setDefectId(String defectId) {
+		this.defectId = defectId;
+	}*/
+}

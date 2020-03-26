@@ -1,0 +1,23 @@
+package com.sheena.defectapiproject.resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import com.sheena.defectapiproject.models.Users;
+
+@RestController
+@RequestMapping("/userprofile")
+public class UserProfileResource {
+
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	@GetMapping("/{username}")
+	public Object getUserProfile(@PathVariable String username)
+	{
+		Users userInfo = restTemplate.getForObject("http://localhost:8081/users/"+username,Users.class);
+		Defect userDefects = call feign client with("http://localhost:8083/defects/"+username,Defect.class);
+	}
+	
+}

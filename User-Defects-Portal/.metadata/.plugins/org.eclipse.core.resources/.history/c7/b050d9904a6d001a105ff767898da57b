@@ -1,0 +1,28 @@
+package com.sheena.defectapiproject.models;
+
+import java.util.Date;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
+@Entity
+public class Defect {
+
+	@Id
+	@GeneratedValue
+	@Column(nullable = false)
+	private String defectId;
+	@NotBlank(message = "product name field is required")
+	@Column(nullable = false)
+	private String prodName;
+	@NotBlank(message = "defect details is required")
+	@Column(nullable = false)
+	private String defectDetails;
+	@Column(nullable = false)
+	private String status;
+	@Column(nullable = false)
+	private Date date;
+	@Column(nullable = false)
+	@NotBlank(message = "User id is required")
+	private String userid;
+}

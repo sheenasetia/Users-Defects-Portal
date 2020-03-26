@@ -1,0 +1,14 @@
+package com.sheena.defectapiproject.resource;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RestController
+@RequestMapping("/defect")
+public class DefectResource {
+
+	@GetMapping("/")
+	public String fun()
+	{
+		return "Sheena";
+	}
+}

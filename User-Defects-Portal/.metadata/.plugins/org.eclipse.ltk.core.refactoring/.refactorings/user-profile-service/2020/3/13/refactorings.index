@@ -1,0 +1,5 @@
+1585115883004	Rename package 'com.sheena.defectapiproject.controller'
+1585118429950	Delete element
+1585118509524	Rename type 'UserResource'
+1585158669540	Encapsulate field 'userInfo'
+1585158679719	Encapsulate field 'def'

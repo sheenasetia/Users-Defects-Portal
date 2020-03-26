@@ -1,0 +1,70 @@
+package com.sheena.defectapiproject.models;
+
+import java.util.Date;
+import java.sql.*;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
+@Entity
+public class Defect {
+
+	@Id
+	@GeneratedValue
+	private String defectId;
+	/*public String getDefectId() {
+		return defectId;
+	}
+	public void setDefectId(String defectId) {
+		this.defectId = defectId;
+	}
+	*/@NotBlank(message = "product name field is required")
+	@Column(nullable = false)
+	private String prodName;
+	@NotBlank(message = "defect details is required")
+	@Column(nullable = false)
+	private String defectDetails;
+	@Column(nullable = false)
+	private String status;
+	@Column(nullable = false)
+	private Date date;
+	@Column(nullable = false)
+	@NotBlank(message = "User id is required")
+	private String userid;
+	public String getDefectId() {
+		return defectId;
+	}
+	public void setDefectId(String defectId) {
+		this.defectId = defectId;
+	}
+	public String getProdName() {
+		return prodName;
+	}
+	public void setProdName(String prodName) {
+		this.prodName = prodName;
+	}
+	public String getDefectDetails() {
+		return defectDetails;
+	}
+	public void setDefectDetails(String defectDetails) {
+		this.defectDetails = defectDetails;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+}
